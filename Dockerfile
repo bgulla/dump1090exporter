@@ -13,6 +13,9 @@ RUN pip install dump1090exporter
 WORKDIR /tmp
 
 EXPOSE 9105
+COPY ./run.sh /run.sh
+RUN chmod +x /run.sh
 
 #ENTRYPOINT ["python", "-m", "dump1090exporter", "--resource-path=http://dump1090.flightaware.svc.cluster.local:30003/data"]
-ENTRYPOINT ["python", "-m", "dump1090exporter", "--resource-path=${resource-path}"]
+#ENTRYPOINT ["python", "-m", "dump1090exporter", "--resource-path=${resource-path}"]
+ENTRYPOINT ["/bin/sh", "/run.sh"]

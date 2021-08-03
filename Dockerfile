@@ -14,4 +14,4 @@ WORKDIR /tmp
 
 EXPOSE 9105
 
-ENTRYPOINT ["python", "-m", "dump1090exporter"]
+ENTRYPOINT ["python", "-m", "dump1090exporter", "--resource-path=http://piaware.flightaware.svc.cluster.local:30003/data"]

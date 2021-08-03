@@ -7,4 +7,4 @@ if [  -z "${RESOURCE_PATH}" ];then
   sleep 10
   exit 1
 fi
-/usr/local/bin/python -m dump1090exporter --resource-path=${RESOURCE_PATH}
+/usr/local/bin/python -m dump1090exporter --resource-path="${RESOURCE_PATH}" 
